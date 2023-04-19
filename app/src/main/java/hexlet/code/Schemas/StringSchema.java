@@ -1,7 +1,5 @@
 package hexlet.code.Schemas;
 
-import java.util.Optional;
-
 public class StringSchema extends Schema {
     private int minimalLength;
 
