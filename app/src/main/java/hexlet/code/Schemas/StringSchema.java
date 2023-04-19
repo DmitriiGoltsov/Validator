@@ -1,5 +1,7 @@
 package hexlet.code.Schemas;
 
+import java.util.Optional;
+
 public class StringSchema extends Schema {
     private int minimalLength;
 
@@ -39,15 +41,15 @@ public class StringSchema extends Schema {
 
     public boolean isValid(String str) {
 
-        int strLength = str.length();
-        boolean currentRequire = super.isRequiredStatus();
+        boolean currentRequire = this.isRequiredStatus();
+        int currentMinLength = this.minimalLength;
 
-        if (currentRequire && this.minimalLength != -1) {
-            return (!str.isEmpty()) && str != null && strLength >= minimalLength;
-        } else if (!currentRequire && this.minimalLength != -1) {
-            return strLength >= this.minimalLength;
-        } else if (currentRequire && minimalLength == -1) {
-            return !str.isEmpty() && str != null;
+        if (currentRequire && (str == null || str.isEmpty())) {
+            return false;
+        } else if (currentMinLength != -1 && str == null) {
+            return false;
+        } else if (currentMinLength != -1 && !currentRequire) {
+            return str.length() >= minimalLength;
         }
 
         return true;

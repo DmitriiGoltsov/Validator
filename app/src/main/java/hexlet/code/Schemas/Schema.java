@@ -24,6 +24,10 @@ public class Schema {
         return requiredStatus;
     }
 
+    public boolean isValid(Object obj) {
+        return !this.requiredStatus || obj != null;
+    }
+
 
 
 }
