@@ -1,11 +1,11 @@
 package hexlet.code;
 
-import hexlet.code.Schemas.StringSchema;
+import hexlet.code.schemas.StringSchema;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ValidatorTest {
+public class StringSchemaTest {
 
     private StringSchema stringSchema;
     private Validator v;
@@ -19,22 +19,7 @@ public class ValidatorTest {
     }
 
     @Test
-    void requiredTest() {
-
-        var expected = false;
-        var actual = stringSchema.isRequiredStatus();
-
-        stringSchema.required();
-
-        var expected2 = true;
-        var actual2 = stringSchema.isRequiredStatus();
-
-        Assertions.assertEquals(expected, actual);
-        Assertions.assertEquals(expected2, actual2);
-    }
-
-    @Test
-    void isValidTestPlain() {
+    void isValidPlainTest() {
 
         boolean actual = stringSchema.isValid("");
         boolean actual2 = stringSchema.isValid(null);
@@ -68,16 +53,18 @@ public class ValidatorTest {
         boolean actual2 = stringSchema.isValid("Word!");
         boolean actual3 = stringSchema.isValid("");
         boolean actual4 = stringSchema.isValid(null);
+        boolean actual5 = stringSchema.isValid("Word");
 
         stringSchema.minLength(0);
 
-        boolean actual5 = stringSchema.isValid("");
+        boolean actual6 = stringSchema.isValid("");
 
         Assertions.assertTrue(actual1);
         Assertions.assertTrue(actual2);
-        Assertions.assertTrue(actual5);
+        Assertions.assertTrue(actual6);
         Assertions.assertFalse(actual3);
         Assertions.assertFalse(actual4);
+        Assertions.assertFalse(actual5);
     }
 
 
