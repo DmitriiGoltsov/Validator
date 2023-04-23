@@ -32,6 +32,8 @@ public class Schema {
 
         if (!(this instanceof StringSchema) && obj instanceof String) {
             return false;
+        } else if (!(this instanceof NumberSchema) && obj instanceof Integer) {
+            return false;
         }
 
         return this.canBeNullable || obj != null;
