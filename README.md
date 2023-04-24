@@ -7,8 +7,8 @@ This is the third training project. It is under construction now. Validator is a
 
 ### _Code Climate maintainability and test coverage badges:_
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/e026ea2ae59ed116f6eb/maintainability)](https://codeclimate.com/github/DmitriiGoltsov/java-project-78/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e026ea2ae59ed116f6eb/test_coverage)](https://codeclimate.com/github/DmitriiGoltsov/java-project-78/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6f362c7838f9c3daa411/maintainability)](https://codeclimate.com/github/DmitriiGoltsov/java-project-78/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6f362c7838f9c3daa411/test_coverage)](https://codeclimate.com/github/DmitriiGoltsov/java-project-78/test_coverage)
 
 ### _Asciinemas of how the programme works:_
 
@@ -19,3 +19,7 @@ This is the third training project. It is under construction now. Validator is a
 #### _NumberSchema:_
 
 [![asciicast](https://asciinema.org/a/wZBK6bu0aLeJC2lyfNiQpX6IV.svg)](https://asciinema.org/a/wZBK6bu0aLeJC2lyfNiQpX6IV)
+
+#### _MapSchema:_
+
+[![asciicast](https://asciinema.org/a/MjjBtur2LhZKnBty9LFJENvAV.svg)](https://asciinema.org/a/MjjBtur2LhZKnBty9LFJENvAV)
