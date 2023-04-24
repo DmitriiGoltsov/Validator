@@ -6,7 +6,7 @@ public class NumberSchema extends Schema {
     private final Integer[] range = new Integer[2];
 
     public NumberSchema() {
-        super(true);
+        super();
         this.hasToBePositive = false;
         this.hasRange = false;
     }

@@ -8,11 +8,7 @@ public class Schema {
         this.canBeNullable = true;
     }
 
-    public Schema(boolean canBeNullable) {
-        this.canBeNullable = canBeNullable;
-    }
-
-    public boolean canBeNullable() {
+    public boolean getCanBeNullable() {
         return this.canBeNullable;
     }
 
@@ -22,10 +18,6 @@ public class Schema {
         }
 
         this.canBeNullable = false;
-    }
-
-    public boolean isCannotBeNullable() {
-        return canBeNullable;
     }
 
     public <T> boolean isValid(T obj) {

@@ -6,7 +6,7 @@ public class StringSchema extends Schema {
     private String stringContent;
 
     public StringSchema() {
-        super(true);
+        super();
         this.minimalLength = -1;
         this.stringContent = "";
     }
