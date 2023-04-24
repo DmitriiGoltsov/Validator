@@ -31,7 +31,7 @@ public class StringSchemaTest {
     }
 
     @Test
-    void isValidWithRequired() {
+    void isValidWithRequiredTest() {
 
         stringSchema.required();
 
@@ -45,7 +45,7 @@ public class StringSchemaTest {
     }
 
     @Test
-    void isValidWIthLength() {
+    void isValidWIthLengthTest() {
 
         stringSchema.minLength(5);
 

@@ -30,7 +30,7 @@ public class NumberSchemaTest {
     }
 
     @Test
-    void isValidWithRequired() {
+    void isValidWithRequiredTest() {
 
         numberSchema.required();
 
@@ -46,7 +46,7 @@ public class NumberSchemaTest {
     }
 
     @Test
-    void isValidWithPositive() {
+    void isValidWithPositiveTest() {
 
         numberSchema.positive();
 
@@ -63,7 +63,7 @@ public class NumberSchemaTest {
     }
 
     @Test
-    void isValidWithRange() throws Exception {
+    void isValidWithRangeTest() throws Exception {
 
         numberSchema.range(1, 10);
 
