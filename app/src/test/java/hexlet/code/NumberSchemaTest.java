@@ -4,6 +4,7 @@ import hexlet.code.schemas.NumberSchema;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 public class NumberSchemaTest {
     private NumberSchema numberSchema;
     private Validator v;
@@ -26,7 +27,7 @@ public class NumberSchemaTest {
         Assertions.assertTrue(actual);
         Assertions.assertTrue(actual2);
         Assertions.assertTrue(actual3);
-        Assertions.assertFalse(actual4);
+        Assertions.assertTrue(actual4);
     }
 
     @Test

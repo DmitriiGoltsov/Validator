@@ -1,38 +1,35 @@
 package hexlet.code.schemas;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
-public class MapSchema extends Schema {
-
-    private int requiredSize;
-    private boolean hasRequiredSize;
+public class MapSchema extends BaseSchema {
 
     public MapSchema() {
         super();
-        this.hasRequiredSize = false;
-    }
-
-    private void setRequiredSize(int requiredSize) {
-        this.requiredSize = requiredSize;
     }
 
     @Override
-    public void required() {
+    public BaseSchema required() {
         super.required();
+        super.addConditions("classCondition", Map.class::isInstance);
+        return this;
     }
 
     public void sizeOf(Integer size) {
-        setRequiredSize(size);
-        this.hasRequiredSize = true;
+        this.required();
+        Predicate<Map<Object, Object>> predicate = (x -> x.size() == size);
+        this.addConditions("size", predicate);
     }
 
     public <K, V> boolean isValid(Map<K, V> map) {
+        return super.isValid(map);
+    }
 
-        if (!super.isValid(map)) {
-            return false;
-        } else {
-            return !this.hasRequiredSize || (this.requiredSize == map.size());
-        }
+    public void shape(Map<String, BaseSchema> schemas) {
+        super.addShape(schemas);
+
+
     }
 
 }

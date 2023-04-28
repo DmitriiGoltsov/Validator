@@ -1,19 +1,18 @@
 package hexlet.code.schemas;
 
-public class NumberSchema extends Schema {
-    private boolean hasToBePositive;
-    boolean hasRange;
-    private final Integer[] range = new Integer[2];
+import java.util.function.Predicate;
+
+public class NumberSchema extends BaseSchema {
 
     public NumberSchema() {
         super();
-        this.hasToBePositive = false;
-        this.hasRange = false;
     }
 
     @Override
-    public void required() {
+    public BaseSchema required() {
         super.required();
+        super.addConditions("classCondition", Integer.class::isInstance);
+        return null;
     }
 
     public void range(int min, int max) throws Exception {
@@ -23,26 +22,19 @@ public class NumberSchema extends Schema {
                     + "greater or equal to the first one!");
         }
 
-        super.required();
-        this.hasRange = true;
-        range[0] = min;
-        range[1] = max;
+        this.required();
+        Predicate<Integer> predicate = (x -> x >= min && x <= max);
+        this.addConditions("range", predicate);
     }
 
-    public void positive() {
-        this.hasToBePositive = true;
+    public BaseSchema positive() {
+        Predicate<Integer> predicate = (x -> x > 0);
+        this.addConditions("positive", predicate);
+        this.addConditions("classCondition", Integer.class::isInstance);
+        return this;
     }
 
-    public boolean isValid(int number) {
-
-        if (!super.isValid(number)) {
-            return false;
-        } else if (this.hasToBePositive && number <= 0) {
-            return false;
-        } else {
-            return !this.hasRange || (number >= this.range[0] && number <= this.range[1]);
-        }
-
+    public <T> boolean isValid(T number) {
+        return super.isValid(number);
     }
-
 }

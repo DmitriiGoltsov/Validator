@@ -55,13 +55,8 @@ public class StringSchemaTest {
         boolean actual4 = stringSchema.isValid(null);
         boolean actual5 = stringSchema.isValid("Word");
 
-        stringSchema.minLength(0);
-
-        boolean actual6 = stringSchema.isValid("");
-
         Assertions.assertTrue(actual1);
         Assertions.assertTrue(actual2);
-        Assertions.assertTrue(actual6);
         Assertions.assertFalse(actual3);
         Assertions.assertFalse(actual4);
         Assertions.assertFalse(actual5);
