@@ -23,7 +23,7 @@ public class BaseSchema {
 
     public <T> boolean isValid(T obj) {
 
-        if (!this.shapes.isEmpty() && obj instanceof Map<?,?>) {
+        if (!this.shapes.isEmpty() && obj instanceof Map<?, ?>) {
             for (Map.Entry<String, BaseSchema> entry : shapes.entrySet()) {
                 if (((Map<?, ?>) obj).containsKey(entry.getKey())) {
                     var result = entry.getValue().isValid(((Map<?, ?>) obj).get(entry.getKey()));
