@@ -26,7 +26,7 @@ public final class MapSchema extends BaseSchema {
         return super.isValid(map);
     }
 
-    public void shape(Map<String, BaseSchema> schemas) {
+    public BaseSchema shape(Map<String, BaseSchema> schemas) {
         addCondition(
                 "shape",
                 value -> {
@@ -35,6 +35,7 @@ public final class MapSchema extends BaseSchema {
                         return e.getValue().isValid(v);
                     });
                 });
+        return this;
     }
 
 }
