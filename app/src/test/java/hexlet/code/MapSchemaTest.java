@@ -57,7 +57,7 @@ public class MapSchemaTest {
     @Test
     void isValidWithRequiredSizeTest() {
 
-        mapSchema.sizeOf(2);
+        mapSchema.sizeof(2);
 
         boolean actual = mapSchema.isValid(data);
 

@@ -15,11 +15,12 @@ public final class StringSchema extends BaseSchema {
         return this;
     }
 
-    public void contains(String str) {
+    public BaseSchema contains(String str) {
         this.required();
         Predicate<String> predicate = (x -> x.contains(str));
         this.addCondition("contains", predicate);
         minLength(str.length());
+        return this;
     }
 
     public void minLength(int min) {
@@ -27,9 +28,4 @@ public final class StringSchema extends BaseSchema {
         Predicate<String> predicate = (x -> x.length() >= min);
         this.addCondition("minLength", predicate);
     }
-
-    public boolean isValid(String str) {
-        return super.isValid(str);
-    }
-
 }

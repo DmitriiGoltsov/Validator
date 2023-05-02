@@ -16,14 +16,10 @@ public final class MapSchema extends BaseSchema {
         return this;
     }
 
-    public void sizeOf(Integer size) {
+    public void sizeof(Integer size) {
         this.required();
         Predicate<Map<Object, Object>> predicate = (x -> x.size() == size);
         this.addCondition("size", predicate);
-    }
-
-    public <K, V> boolean isValid(Map<K, V> map) {
-        return super.isValid(map);
     }
 
     public BaseSchema shape(Map<String, BaseSchema> schemas) {
