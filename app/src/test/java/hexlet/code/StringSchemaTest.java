@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class StringSchemaTest {
+public final class StringSchemaTest {
 
     private StringSchema stringSchema;
     private Validator v;

@@ -19,7 +19,7 @@ public class BaseSchema {
         return this;
     }
 
-    public <T> boolean isValid(T obj) {
+    public final <T> boolean isValid(T obj) {
 
         if (obj == null || obj.equals("")) {
             return this.canBeNullable;
@@ -30,7 +30,7 @@ public class BaseSchema {
 
     }
 
-    public <T> void addCondition(String conditionName, Predicate<T> predicate) {
+    public final <T> void addCondition(String conditionName, Predicate<T> predicate) {
         this.conditions.put(conditionName, predicate);
     }
 }
