@@ -1,5 +1,7 @@
 package hexlet.code.schemas;
 
+import java.util.Objects;
+
 public final class StringSchema extends BaseSchema {
 
     public StringSchema() {
@@ -19,7 +21,7 @@ public final class StringSchema extends BaseSchema {
     }
 
     public StringSchema minLength(int min) {
-        this.addCondition("minLength", obj -> ((String) obj).length() >= min);
+        this.addCondition("minLength", (obj -> ((String) obj).length() >= min));
         return this;
     }
 }

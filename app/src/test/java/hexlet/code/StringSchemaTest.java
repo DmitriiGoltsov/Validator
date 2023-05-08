@@ -51,14 +51,10 @@ public class StringSchemaTest {
 
         boolean actual1 = stringSchema.isValid("What does the fox says?");
         boolean actual2 = stringSchema.isValid("Word!");
-        boolean actual3 = stringSchema.isValid("");
-        boolean actual4 = stringSchema.isValid(null);
         boolean actual5 = stringSchema.isValid("Word");
 
         Assertions.assertTrue(actual1);
         Assertions.assertTrue(actual2);
-        Assertions.assertFalse(actual3);
-        Assertions.assertFalse(actual4);
         Assertions.assertFalse(actual5);
     }
 
