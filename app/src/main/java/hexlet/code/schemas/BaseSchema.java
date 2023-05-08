@@ -14,6 +14,12 @@ public class BaseSchema {
         this.conditions = new HashMap<>();
     }
 
+    /**
+     * Change canBeNullable condition for a null object.
+     * In subclasses of BaseSchema can be overridden. To do it safely it is necessary to use super
+     * + add some other conditions to Map<String, Predicate> conditions.
+     * @return BaseSchema object
+     */
     public BaseSchema required() {
         this.canBeNullable = false;
         return this;
