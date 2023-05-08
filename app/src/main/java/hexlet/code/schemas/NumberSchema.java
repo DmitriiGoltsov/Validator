@@ -27,9 +27,9 @@ public final class NumberSchema extends BaseSchema {
     }
 
     public BaseSchema positive() {
-        Predicate<Integer> predicate = (x -> x > 0);
-        this.addCondition("positive", predicate);
-        this.addCondition("classCondition", Integer.class::isInstance);
+        this.addCondition("positive", obj ->
+                obj == null || obj instanceof Integer integer && integer > 0);
+
         return this;
     }
 }
