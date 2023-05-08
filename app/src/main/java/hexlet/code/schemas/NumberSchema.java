@@ -15,13 +15,7 @@ public final class NumberSchema extends BaseSchema {
         return null;
     }
 
-    public void range(int min, int max) throws Exception {
-
-        if (max < min) {
-            throw new Exception("Incorrect range. The second value should be "
-                    + "greater or equal to the first one!");
-        }
-
+    public void range(int min, int max) {
         Predicate<Integer> predicate = (x -> x >= min && x <= max);
         this.addCondition("range", predicate);
     }
