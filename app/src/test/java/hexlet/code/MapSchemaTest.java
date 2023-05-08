@@ -13,8 +13,8 @@ public final class MapSchemaTest {
 
     private MapSchema mapSchema;
     private Validator v;
-    Map<String, String> data;
-    Map<String, BaseSchema> schemas;
+    private Map<String, String> data;
+    private Map<String, BaseSchema> schemas;
 
     @BeforeEach
     void beforeEach() {
