@@ -1,6 +1,22 @@
 # Validator
 
-This is the third training project. It is under construction now. Validator is an effort to make a [yup-like](https://github.com/jquense/yup) library in Java.
+This is a simple [yup-like](https://github.com/jquense/yup) library written in Java. It can validate follow types of data:
+
+1) Strings
+2) Numbers
+3) Objects of Map type
+
+## Requirements 
+
+1) JDK 17.0.5 or above
+2) Make
+3) Gradle 7.6 or above
+
+## Usage
+
+1) Download library from GitHub
+2) Import it (e.g. using jshell)
+3) Use it as shown in asciinemas below
 
 ### _Hexlet tests and linter status:_
 [![Actions Status](https://github.com/DmitriiGoltsov/java-project-78/workflows/hexlet-check/badge.svg)](https://github.com/DmitriiGoltsov/java-project-78/actions)
